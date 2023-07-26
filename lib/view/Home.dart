@@ -133,106 +133,33 @@ class Home extends StatelessWidget {
                     decoration: BoxDecoration(color:Color(0xff171725)),
                     child: Column(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: 75,
-                                  width: 85,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              "https://winetime.com.ua/uploads/public/goods/3656/1585225128_63618_502_378.webp"),
-                                          fit: BoxFit.fill),
-                                      border: Border.all(
-                                          color: Colors.white, width: 3)),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(right: 5, left: 5),
-                                  child: Container(
-                                    height: 75,
-                                    width: 85,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(20)),
-                                        image: DecorationImage(
-                                            image: NetworkImage(
-                                                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Lmpt56VZ8TLXG7MC8xOaPEeXOYziQXmXKQ&usqp=CAU"),
-                                            fit: BoxFit.fill),
-                                        border: Border.all(
-                                            color: Colors.white, width: 3)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 75,
-                                  width: 85,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7PIMOQJL22E4mprYBGg0A6wjzYTkCfFdeiw&usqp=CAU"),
-                                          fit: BoxFit.fill),
-                                      border: Border.all(
-                                          color: Colors.white, width: 3)),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 5, right: 5),
-                                  child: Container(
-                                    height: 75,
-                                    width: 85,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(20)),
-                                        image: DecorationImage(
-                                            image: NetworkImage(
-                                                "https://uzreport.news/fotobank/image/15356bd95bd9b2935a7a0f115eb4cbde.jpeg"),
-                                            fit: BoxFit.fill),
-                                        border: Border.all(
-                                            color: Colors.white, width: 3)),
-                                  ),
-                                ),
-                                Container(
-                                  height: 75,
-                                  width: 85,
-                                  decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(20)),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                              "https://dostavo4ka.uz/upload-file/2021/05/05/5919/750x750-932eb989-adad-4623-b913-c58fdb892aa8.jpg"),
-                                          fit: BoxFit.fill),
-                                      border: Border.all(
-                                          color: Colors.white, width: 3)),
-                                ),
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(left: 5, right: 10),
-                                  child: Container(
-                                    height: 75,
-                                    width: 85,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.all(Radius.circular(20)),
-                                        image: DecorationImage(
-                                            image: NetworkImage(
-                                                "https://xs.uz/upload/post/2020/06/04/b2d987447039c1c713d9f559e6a88ff80604.jpg"),
-                                            fit: BoxFit.fill),
-                                        border: Border.all(
-                                            color: Colors.white, width: 3)),
-                                  ),
-                                ),
-                              ],
+
+                           SizedBox(
+                              width: 350,
+                              height: 100,
+                              child: ListView.builder(
+                                scrollDirection: Axis.horizontal,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(4.0),
+                                    child: Container(
+                                      width: 100,
+                                      height: 100,
+                                      decoration: BoxDecoration(borderRadius:BorderRadius.all(Radius.circular(20)),color: Colors.white),
+                                       child: Center(child: Image(image: NetworkImage(state.users.allData[index].img),width: 70,fit: BoxFit.fill,)),
+                                    ),
+                                  );
+                                },
+                                itemCount: state.users.allData.length,
+                              ),
                             ),
-                          ),
-                        ),
+
+                            //birinchi qator aylanadigan tugadi
+
+
+
+
+                       
 
                          Padding(
                       padding: const EdgeInsets.only(top: 15,left: 30,bottom: 15),
@@ -301,7 +228,7 @@ class Home extends StatelessWidget {
                                 },
                                 itemCount: state.users.allData.length,
                               ),
-                            )
+                            ),
                           ],
                         ),
                   
